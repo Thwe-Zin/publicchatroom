@@ -1,0 +1,173 @@
+
+ https://firebase.google.com/ > Docs >Overview >Firebase Fundamentals > click Web icon > Available Firebase services for web > Cloud Firestore for Web
+
+npm init or npm init -y
+npm install firebase@latest
+npm install express or  npm install express@latest
+
+
+=> How to use Vite 
+
+1. Install 
+    npm install --save-dev vite (or) npm install --save-dev vite@latest
+
+2. Create a new file as vite.config.js 
+    export default defineConfig({
+    root:'./src',
+    build:{
+        outDir:'../dist',  //define the output directory ,the output directory for to build files
+
+        }
+    });
+    
+    import { defineConfig} from 'vite';
+
+    export default defineConfig({
+    server:{
+        watch:{
+            usePolling: true
+        }
+    },
+    publicDir:"../public",
+    root:'./src',
+    build:{
+        outDir:'../dist',  //define the output directory ,the output directory for to build files
+
+    }
+});
+
+3. Update package.json
+    "scripts": {
+    "dev":"vite",
+    "build":"vite build"
+  }
+
+4. Run Build the app for production
+    npm run build
+
+5. Run Vite in developement server
+    npm run dev
+
+-------------------------------------------------------
+=> Install Express
+npm install express or npm install express@latest
+
+nodemon server.js
+
+=> import express from 'express';
+
+
+--------------------------------------------------------
+=> Enable Email/Password Authenication
+Make sure you have enable Email/Password Authenication in your firebase console
+
+Authenication > Sign-in Method
+Ensure Email/Password is enabled.
+Save the changes
+
+=> Enable Google Sign-In in Firebase console
+
+Authenication > Sign-in Method
+Enable Google under the list of providers
+
+
+Public-facing name for project = your firebase project id
+Support email for project = your firebase gmail address
+Save the changes
+
+--------------------------------------------------------------------------
+=> Customize the Password Reset Email Template
+you can customize the password reset email link to redirected user to a specific page in your app.
+
+Authenication > Templates > Password reset > click Edit pen
+
+------------------------------------------------------
+=> How to install Tailwind Css
+
+1. Install Tailwind CSS
+https://tailwindcss.com/docs/installation/using-postcss
+
+npm install tailwindcss @tailwindcss/postcss postcss (OR) npm install -D tailwindcss postcss autoprefixer
+npm install tailwindcss @tailwindcss/vite@latest
+
+npx tailwindcss init (this create a tailwind.config.js file in your project)
+
+2. Add Tailwind to your PostCSS configuration
+create postcss.config.js manually (Note: do not forgot to export as ES6)
+
+export default {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  }
+}
+3.Configure your template paths
+
+/** @type {import('tailwindcss').Config} */
+export default  {
+    content: [
+        "./src/**/*.{html,js,jsx}"],
+    theme: {
+      extend: {},
+    },
+    plugins: [],
+  }
+
+4. Add the Tailwind directives to your Css
+create a css file located to (e.g src/css/main.css)
+
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+5. include css link to each html file
+<link href="" rel="stylesheet" />
+<link src="./css/main.css" rel="stylesheet" type="text/css" />
+
+npm run build
+npm run dev
+------------------------------------------------
+
+
+
+-----------------------------------------------------------
+How to install dateFns
+
+1. Install
+https://date-fns.org/docs/Getting-Started
+
+npm install date-fns --save
+
+2. import in src/main.js or src/js/uielements.js
+
+import { format, compareAsc } from "date-fns";
+
+const formatteddate = format(new Date(createdtime),"do MMM yyyy");
+
+
+--------------------------------------------------------
+
+How to install Fontawesome 6
+
+1. Install
+
+
+npm install @fortawesome/fontawesome-free 
+
+2. import in src/authsigninapp.js or src/js/app.js
+
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+------------------------------------------------------------------
+=> Deploy on cloud Server
+
+1. your project need Repo public/private to Github
+git remote add origin git@github.com:Thwe-Zin/publicchatroom.git
+git status
+git add *
+2. 
+
+
+cd "D:\jsonbatch3\firebase\l14npmjs-auth"
+cd "D:\jsonbatch3\firebase\l15npmchatroom-auth"
